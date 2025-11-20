@@ -1,8 +1,14 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Accent palette inspired by `public/creative-man.png` */
+  --accent-1: #0ea5a4; /* teal */
+  --accent-2: #f97316; /* warm orange */
+  --accent-3: #0f172a; /* deep navy */
+  --muted: #6b7280; /* slate gray */
 }
 
 @theme inline {
@@ -14,8 +20,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark-mode background: slightly lighter navy to sit behind header (#0f172a) */
+    --background: #0b1f2b;
+    --foreground: #e6eef6;
   }
 }
 
@@ -23,4 +30,22 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Utility-ish helpers used by components */
+.btn-accent {
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: white;
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(14, 165, 164, 0.06),
+    rgba(249, 115, 22, 0.04)
+  );
+}
+
+.muted {
+  color: var(--muted);
 }
