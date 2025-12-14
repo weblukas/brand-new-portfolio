@@ -20,9 +20,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Dark-mode background: slightly lighter navy to sit behind header (#0f172a) */
-    --background: #0b1f2b;
-    --foreground: #e6eef6;
+    /* Dark-mode background: slightly lighter navy to sit behind header (#0f172a) dark navy (#0B1F2B) */
+    --background: #e5eaed;
+    --foreground: #252526;
   }
 }
 

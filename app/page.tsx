@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '@/components/Header';
-import SkillList from '@/components/SkillList';
+import Skills from '@/components/Skills';
 import ProjectCard from '@/components/ProjectCard';
 import Image from 'next/image';
 
@@ -78,7 +78,7 @@ export default function Home() {
 
         <section className='mb-12'>
           <h2 className='text-4xl font-bold'>Skills</h2>
-          <SkillList />
+          <Skills />
         </section>
 
         <section id='projects' className='mb-12'>
