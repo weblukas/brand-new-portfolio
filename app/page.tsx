@@ -3,21 +3,9 @@ import Header from '@/components/Header';
 import Skills from '@/components/Skills';
 import ProjectCard from '@/components/ProjectCard';
 import Image from 'next/image';
+import { projectsData } from '@/utils/projectsData';
 
-const projects = [
-  {
-    title: 'Project A — Modern Dashboard',
-    desc: 'Built with Next.js, TypeScript and Tailwind. Features data fetching via REST and TanStack Query.',
-    tech: ['Next.js', 'TypeScript', 'Tailwind', 'TanStack Query'],
-    link: '#',
-  },
-  {
-    title: 'Project B — Design System',
-    desc: 'Component library and Storybook for consistent UI and developer experience.',
-    tech: ['React', 'Styled Components', 'Storybook'],
-    link: '#',
-  },
-];
+
 
 export default function Home() {
   return (
@@ -63,35 +51,45 @@ export default function Home() {
           </div>
         </section>
         <section className='mb-12'>
-          <h1 className='text-4xl font-bold'>Introduction</h1>
-          <p className='mt-4 max-w-3xl text-lg leading-7 text-zinc-700 dark:text-zinc-300'>
-            Hi, I&apos;m Lukasz Szmyd, a passionate developer dedicated to crafting high-quality web experiences.
-            Comfortable working end-to-end on the front-end: from
-            translating Figma designs into clean, accessible UI, through state
-            management and data fetching (REST / GraphQL), to basic Node.js
-            backends (Hono, Express) that support the client side. I care about
-            readable code, consistent design systems and good developer
-            experience.
+          <h2 className='text-4xl mb-4 font-bold'>Introduction</h2>
+          <p className='max-w-3xl text-lg leading-7 text-zinc-700 dark:text-zinc-300'>
+            Hi, I&apos;m Lukasz Szmyd, a passionate developer dedicated to
+            crafting high-quality web experiences. Comfortable working
+            end-to-end on the front-end: from translating Figma designs into
+            clean, accessible UI, through state management and data fetching
+            (REST / GraphQL), to basic Node.js backends (Hono, Express) that
+            support the client side. I care about readable code, consistent
+            design systems and good developer experience.
           </p>
-         
         </section>
 
-        <section className='mb-12'>
-          <h2 className='text-4xl font-bold'>Skills</h2>
+        <section className='mb-12 '>
+          <h3 className='text-4xl font-bold mb-4'>Skills</h3>
           <Skills />
         </section>
 
         <section id='projects' className='mb-12'>
-          <h2 className='mb-6 text-2xl font-semibold'>Selected projects</h2>
+          <h4 className='text-4xl font-bold mb-4'>Selected projects</h4>
           <div className='grid gap-6 md:grid-cols-2'>
-            {projects.map((p) => (
-              <ProjectCard key={p.title} project={p} />
-            ))}
+            {projectsData.map((project) => {
+              const { id, name, image, description, url, github } = project
+              return (
+                <ProjectCard
+                  key={id}
+                  id={id}
+                  name={name}
+                  image={image}
+                  description={description}
+                  url={url}
+                  github={github}
+                />
+              );
+            })}
           </div>
         </section>
 
         <section id='contact' className='mb-12'>
-          <h2 className='mb-4 text-2xl font-semibold'>Contact</h2>
+          <h5 className='mb-4 text-2xl font-semibold'>Contact</h5>
           <p className='mb-4 text-zinc-700 dark:text-zinc-300'>
             I am available for freelance and full-time roles. You can reach me
             via email:

@@ -53,7 +53,7 @@ export default function SkillList() {
                     ref={ref}
                     initial={{ opacity: 0, y: 20 }} // Initial animation state
                     animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate only when in view
-                    transition={{ duration: 0.5, delay: skil.id * 0.1 }} // Animation timing
+                    transition={{ duration: 0.5,  }} // Animation timing
                   >
                     {skil}
                   </motion.div>
